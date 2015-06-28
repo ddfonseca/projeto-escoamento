@@ -1,0 +1,195 @@
+\documentclass[a4paper, 12pt, openany, oneside, brazil]{abntex2} %\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{listings}  % Para implementar códigos dentro do arquivo
+\usepackage{color}     % Color
+\usepackage{amsmath}
+\usepackage{cancel}
+% \usepackage{subcaption}
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[num, bibjustif]{abntex2cite}	% Citações padrão ABNT
+
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\DeclareUnicodeCharacter{00A0}{ }
+
+% define the author
+\autor{David Oliveira da Fonseca e Marcus Vinícius Araújo Moreno.}
+\titulo{Análise de uma turbina hidráulica em um modelo reduzido}
+\instituicao{Universidade Federal do Rio de Janeiro - UFRJ}
+\local{Macaé/RJ}
+\data{2015}
+\instituicao{Universidade Federal do Rio de Janeiro - \textit{campus} Macaé}
+
+\tipotrabalho{Trabalho Acadêmico}
+
+\preambulo{Projeto semestral para aprovação da disciplina de Projetos de Escoamento, ministrado pelo Prof. Eng. Marcelo Silva da Universidade Federal do Rio de Janeiro - \textit{campus} Macaé.}
+
+\makeatletter
+\hypersetup{
+        %pagebackref=true,
+		pdftitle={\@title},
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico},
+		colorlinks=true,       		% false: boxed links; true: colored links
+        % colorlinks=false,
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\volume}{\mathop{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}\nolimits}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\begin{document}
+
+\frenchspacing
+
+\imprimircapa
+
+\imprimirfolhaderosto
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+ Segundo a o resumo deve ressaltar o
+ objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
+ destes itens dependem do tipo de resumo (informativo ou indicativo) e do
+ tratamento que cada item recebe no documento original. O resumo deve ser
+ precedido da referência do documento, com exceção do resumo inserido no
+ próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
+ resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
+ ponto e finalizadas também por ponto.
+
+ \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   This is the english abstract.
+
+   \vspace{\onelineskip}
+
+   \noindent
+   \textbf{Key-words}: latex. abntex. text editoration.
+ \end{otherlanguage*}
+\end{resumo}
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents
+\cleardoublepage
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ---
+% Trabalho tod
+% ---
+\OnehalfSpacing
+
+\chapter*[Objetivo]{Objetivo}
+\addcontentsline{toc}{chapter}{Objetivo}
+    Este trabalho pretende demonstrar habilidade na elaboração de um trabalho acadêmico, além do domínio adquirido pelo grupo na análise de modelo reduzido assim como avaliação da perda de carga de uma tubulação, assimilados no decorrer das disciplinas de Mecânica dos Fluidos e Máquinas de Fluxo I. Nele, encontra-se a apresentação do problema proposto com seus respectivos cálculos e comentários sobre os resultados.
+
+    Deseja-se construir um modelo de dimensões 10 (dez) vezes menores, submetido a uma altura de queda também 10 (dez) vezes menor para uma turbina hidráulica que opera com água. De modo que pode-se prever o funcionamento da turbina, como a velocidade de rotação, a potência no eixo e o diâmetro do rotor.
+
+
+\chapter{Fundamentos Teóricos}
+% \include{encher_linguica}
+% \include{fundamentos_teoricos}
+\input{encher_linguica}
+\input{fundamentos_teoricos}
+
+\chapter{Justificativa}
+    Construir um modelo reduzido é uma ótima oportunidade para compreender e prever o funcionamento de uma turbina real, já que pode-se testar e verificar o funcionamento no modelo reduzido. Desse modo, é possível reduzir o custo e o trabalho a ser executado de maneira significativa, otimizando o processo e o desenvolvimento da turbina. Caso não se faça isso, seria uma enorme perda de tempo e dinheiro caso fosse construído a turbina em enormes dimensões e para verificar que não produz a potência requerida com seu rendimento.
+
+\chapter{Metodologia} % e as considerações
+
+    Para realizar o objetivo, o trabalho foi composto por três partes: a primeira – que engloba a determinação de qual turbina operará através do cálculo do coeficiente de forma, assim como a velocidade do jato d'água na saída da tubulação. Nessa parte, a avaliação da perda de carga na tubulação assim como as simplificações feitas foram cruciais para a realização do projeto, a segunda - que apresenta os cálculos realizados na turbina real para os dados fornecidos e resultados anteriores, e a terceira - que engloba toda análise feita no modelo reduzido à partir das informações anteriores.
+
+    % Os critérios a serem analisados são: aplicação dos métodos estatísticos estudados na disciplina; justificativa das conclusões tiradas e decisões tomadas, à luz dos métodos estatísticos estudados; capacidade crítica revelada pelo grupo em relação aos resultados; apresentação e qualidade do texto.
+
+\chapter{Calculos}
+\input{calculo}
+\chapter*[Considerações Finais]{Considerações Finais}
+\addcontentsline{toc}{chapter}{Considerações Finais}
+
+
+% \include{calculo}
+
+\bibliography{bibliografia}
+
+\begin{apendicesenv}
+
+% % Imprime uma página indicando o início dos apêndices
+% \partapendices
+
+% ----------------------------------------------------------
+\chapter{Programa para determinar a velocidade do jato d'água em Python}
+% ----------------------------------------------------------
+\label{ap-python}
+ \lstinputlisting[language=Python]{iteracao.py}
+
+
+\end{apendicesenv}
+\end{document}

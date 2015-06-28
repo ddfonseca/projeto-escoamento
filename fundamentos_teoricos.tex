@@ -1,0 +1,110 @@
+\section {Números adimensionais}
+
+\subsection{Coeficiente de Reynolds}
+
+    O número de Reynolds é bastante utilizado na mecânica dos fluidos, principalmente para determinar a classificação do escoamento, se é laminar, transiente ou turbulento. Seu significado físico é o quociente de forças de inércia ($V \rho$) entre forças de viscosidade ($\mu/D$), e é expressado como:
+
+    \begin{equation} \label{eq-reynolds}
+        Re = \frac{\rho V D}{\mu}
+    \end{equation}
+
+    Onde, $\rho$ é a massa específica do fluido, $V$ velocidade do fluido, $D$ o diâmetro da tubulação e $\mu$ a viscosidade cinemática do fluido.
+
+\subsection {Coeficiente de forma}
+
+    A equação abaixo representa a \textbf{velocidade de rotação específica} ou \textbf{coeficiente de forma} do rotor. Ela é adimensional e seu valor numérico mantém constante para máquinas de fluxo semelhantes, independente do sistema de unidades usado no cálculo.
+    \begin{equation} \label{eq-na}
+        n_{qA} = 10^3 \; . \; n \; . \; \frac{Q^{\rfrac{1}{2}}}{Y^{\rfrac{3}{4}}}
+    \end{equation}
+
+\noindent
+    Onde:  \\
+    $n_{qA} =$ velocidade de rotação específica ou coeficiente de forma do rotor; \\
+    $n$ = velocidade de rotação da máquina, em $rps$ (Hz); \\
+    $Q$ = vazão da máquina, em $m^3/s$; \\
+    $Y$ = salto energético específico, em $J/kg$.
+
+% \indent
+
+    Os valores de $n$, $Q$, e $Y$, utilizados no cálculo do $n_{qA}$ correspondem ao ponto de projeto ou melhor rendimento. Para máquinas de vários estágios (rotores em série) o $Y$ utilizado corresponde ao salto energético específico de cada rotor, e para rotores com dupla sucção, utiliza-se a vazão $Q$ de um dos tubos de sucção.
+
+    \begin{table}[htb]
+         \setlength{\tabcolsep}{20pt} % General space between cols (6pt standard)
+        \centering
+        \caption{Valores de $n_{qA}$ indicados para diferentes tipos de máquinas de fluido.}
+        \label{tab-na}
+        % \begin{tabular}{p{2.6cm}|p{6.0cm}|p{2.25cm}|p{3.40cm}}
+        % \resizebox{0.35\textwidth}{!}{%
+        \begin{tabular}{l  l}
+            \toprule
+            Para turbina hidráulica do tipo Pelton & $n_{qA} =$ 5 a 70 \\
+            \hline
+            Para turbina hidráulica do tipo Francis lenta & $n_{qA} =$ 50 a 120 \\
+            % \hline
+            % Para turbina hidráulica do tipo Francis normal & $n_{qA} =$ 120 a 200 \\
+            \hline
+            Para turbina hidráulica do tipo Francis rápida & $n_{qA} =$ 200 a 320 \\
+            \hline
+            Para turbina hidráulica do tipo Michel-Banki  & $n_{qA} =$ 30 a 210 \\
+            \hline
+            Para turbina hidráulica do tipo Dériaz  & $n_{qA} =$ 200 a 450 \\
+            \hline
+            Para turbina hidráulica do tipo Kaplan e Hélice  & $n_{qA} =$ 300 a 1000 \\
+            \hline
+            Para turbina a vapor e gás com admissão parcial & $n_{qA} =$ 6 a 30 \\
+            \hline
+            Para turbina a vapor e gás com admissão total & $n_{qA} =$ 30 a 300 \\
+            \hline
+            Para bomba de deslocamento positivo & $n_{qA} <$  30 \\
+            \hline
+            Para bomba centrifuga & $n_{qA} =$  30 a 250 \\
+            \hline
+            Para compressor de deslocamento positivo & $n_{qA} <$ 20 \\
+            \hline
+            Para ventilador e turbocompressor centrífugo & $n_{qA} = 20$ a 330 \\
+            \hline
+            Para ventilador e turbocompressor axial & $n_{qA} =$ 330 a 1800 \\
+            \bottomrule
+        \end{tabular} %}
+        \legend {Fonte: Máquinas de fluidos  \cite{maq_fluidos_henn}}
+    \end{table}
+
+
+\section{Perda de Carga}
+
+    O assunto perda de carga é extenso dentro da mecânica dos fluidos, será tratado aqui apenas o essencial para o desenvolvimento do projeto. Sabe-se que entre dois pontos de um fluido é possível aplicar a equação abaixo, com as seguintes condições: escoamento permamente, incompreensível, completamente desenvolvido, energia interna e pressão uniforme em 1 e 2 \cite{fox}.
+
+    \begin{equation} \label{eq-perda_de_carga}
+        h_t = \left( \frac{p_1}{\rho} + \frac{V^2_1}{2} + gz_1 \right)- \left( \frac{p_2}{\rho} + \frac{V^2_2}{2} + gz_2 \right)
+    \end{equation}
+
+\noindent
+    Onde: \\
+    $h_t$ : Perda de carga total da tubulação entre os pontos 1 e 2. \\
+    $p$   : Pressão nos pontos 1 e 2. \\
+    $\rho$ : Massa específica do fluido. \\
+    $z$ : Cota geométrica do ponto 1 e 2. \\
+    $V$: Velocidade nos pontos 1 e 2.
+
+
+    Para um escoamento laminar, é possível calcular a ($h_t$) analiticamente, porém tubulação desenvolvida para o projeto, o escoamento é turbulento e o cálculo da perda de carga ($h_t$) é encontrado por uma fórmula empírica em base dados experimentais, conhecida por Darcy-Weisbach:
+    \begin{equation} \label{eq-darcy}
+        h_{maior} = f \frac{L}{D} \frac{V^2}{2}
+    \end{equation}
+
+    \noindent
+    Onde \\
+    $f$: fator de atrito \\
+    $L$: Comprimento do duto \\
+    $D$: Diâmetro interno do duto \\
+    $V$: Velocidade no duto
+
+    E $h_{maior}$ é denominado perda de carga maior, pois é onde terá uma maior contribuição para a perda de carga total, as perdas menores são devido uma variedade de acessórios, curvas ou mudanças súbitas de área \cite{fox} que não serão consideradas na tubulação do projeto.
+
+    O fator de atrito $f$ pode ser calculado através da fórmula de Colebrook \cite{fox}, que serve para evitar o uso do Diagrama de Moody nos escoamentos turbulentos:
+
+    \begin{equation} \label{eq-colebrook}
+    \frac{1}{f^{0,5}} = -2,0 \log \left( \frac{e/D}{3,7} + \frac{2,51}{Re\;f^{0,5}} \right)
+    \end{equation}
+
+    Que é facilmente resolvida dando-lhe um valor inicial arbitrário  e fazendo a iteração dos novos valores, pois converge rapidamente.
