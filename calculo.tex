@@ -118,10 +118,26 @@
         H_m = \frac{H_p}{10} = \frac{342}{10} = 34,2\:m \implies Y_m = g \: . \: H_m = 9,81 \: . \: 34,2 = 335,5\: J/kg
     \end{equation*}
 
-    Como as grandezas biunitárias são iguais para máquinas de fluxo semelhantes, com base na equação pode-se escrever:
-
-    \begin{equation}
-        n_{11} = \frac{n_m \: D_m}{Y_m^{\rfrac{1}{2}}}
-    \end{equation}
+    Como as grandezas biunitárias são iguais para máquinas de fluxo semelhantes, com base na equação \eqref{eq-vel-bi} pode-se escrever:
+    \begin{equation*}
+        \begin{split}
+            n_{11} &= \frac{n_m \: D_m}{Y_m^{\rfrac{1}{2}}} = \frac{n_p \: D_p}{Y_p^{\rfrac{1}{2}}} \; \therefore \\
+            n_m &= n_p \: \frac{D_p}{D_m}\: \left(\frac{Y_m}{Y_p} \right)^{\rfrac{1}{2}} = 5\; \frac{2,20}{0,220} \left( \frac{335,5}{3355,02} \right)^{\rfrac{1}{2}} \; \therefore \\
+            n_m &= 15,81 \: rps \mbox{ ou } 948,68\: rpm
+        \end{split}
+    \end{equation*}
 
 \section{A potência no eixo da turbina modelo}
+
+    Considerando as perdas na instalações ignoradas e um rendimento de, $\eta_p = 0,85$, a potência do protótipo pode ser calculada pela equação abaixo:
+    \begin{equation*}
+        P_{ep} = \rho \, . \, Q_p \, . \, Y_p \, . \, \eta_p = 1000 \, . \, 2,23 \, . \, 3355,02 \, . \, 0,85 = 6359,4 \: \mbox{kW}
+    \end{equation*}
+
+    E considerando um rendimento invariável entre modelo e protótipo, o modelo também operando com água, a equação \eqref{eq-pot-bi} permite estabelecer:
+    \begin{equation*}
+        \begin{split}
+            P_{e11} &= \frac{P_{em}}{D_m^2 \: . \: Y_m^{\rfrac{3}{2}}} = \frac{P_{ep}}{D_p^2 \: . \: Y_p^{\rfrac{3}{2}}} \; \therefore \; P_{em} = P_{ep} \; \left( \frac{D_m}{D_p} \right)^2 \left( \frac{Y_m}{Y_p} \right)^{ \! \rfrac{3}{2}} \; \therefore  \\
+            P_{em} &= 6359,4 \left( \frac{0,220}{2,20} \right)^2 \left( \frac{335,5}{3355,02} \right)^{\rfrac{3}{2}} = 2,01 \; \mbox{kW} 
+        \end{split}
+    \end{equation*}

@@ -135,10 +135,29 @@
     Onde $k_c$ é denominado \textbf{escala de velocidades}. E a \textbf{semelhança dinâmica} significa que os tipos idênticos de forças sejam vetores paralelos e que a relação entre seus módulos seja constante para pontos correspondentes, ou seja:
 
     \begin{equation}
-        \frac{F_{inércia,p}}{F_{inércia,m}} = \frac{F_{atrito,p}}{F_{atrito,m}} = \mbox{constante}
+        \frac{F_{inércia,p}}{F_{inércia,m}} = \frac{F_{atrito,p}}{F_{atrito,m}} = k_D = \mbox{constante}
     \end{equation}
 
     Onde $k_D$ é denominada de \textbf{escala dinâmica}.
 
     É possível testar se duas máquinas realmente são semelhantes se cumprirem-se, simultaneamente, a igualdade do número de reynolds, do número de Mach, do número de Froude, do número Weber e do número de Euler. Contudo, o mais importante é o número de Reynolds para a semelhança dinâmica.
+
+     As grandezas biunitárias são feitas restrições de salto energético específico unitário, diâmetro característico do rotor unitário, semelhança cinemática e rendimento hidráulico constante entre modelo e protótipo, A \textbf{velocidade de rotação biunitária} ($n_{11}$) é dada por:
+
+     \begin{equation} \label{eq-vel-bi}
+         n_{11} = \frac{n\: D}{Y^{\rfrac{1}{2}}}
+    \end{equation}
+
+    \noindent
+    Onde: \\
+    $n_{11}$ = velocidade de rotação biunitária, no Sistema Internacional de Unidades, em $kg^{1/2}\: m/J^{1/2}s$; \\
+    $n$ = velocidade de rotação da máquina considerada, em rps ou Hz; \\
+    $D$ = diâmetro característico do rotor da máquina considerada; \\
+    $Y$ = salto energético da máquina considerada, em $J/kg$.
+
+    Outra grandeza biunitária bastante utilizada em máquinas de fluxo, é a \textbf{potência no eixo biunitária} que é dada por:
+
+    \begin{equation} \label{eq-pot-bi}
+        P_{e11} = \frac{P_e}{D^2 \: Y^{3/2}}
+    \end{equation}
 
