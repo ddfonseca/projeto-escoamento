@@ -71,7 +71,7 @@
 
     Para executar o fluxograma da \autoref{fig-fluxo}, foi realizado pelos autores um programa computacional na linguagem de programação Python que se encontra no \autoref{ap-python}. O resultado da velocidade de saída do jato d'água $(V_j$) para uma tubulação feita de ferro fundido, e portanto, rugosidade ($e$) de 0,00026 $m$, convergiu para: $\mathbf{78,31\:} m/s$.
 
-\section{A velocidade absoluta do fluido $c_4$ na entrada do rotor}
+    \section{A velocidade absoluta do fluido $V_{j,c}$ na entrada do rotor}
 
     \begin{figure}[htb]
         \centering
@@ -79,14 +79,49 @@
         \includegraphics[scale=0.5]{images/pelton_turbine.png}
         \legend{Fonte: Fluid Mechanics \cite{white}.}
     \end{figure}
+    A \autoref{fig-pelton_white} representa o funcionamento da turbina Pelton proveniente do jato d'água e demostra o triângulo de velocidades fornecido para um ângulo arbitrário $\beta$.
 
-    Para um bocal perfeito, a velocidade do jato sem a perda de atrito seria a velocidade $V_j = 78,31 \: m/s$, no entanto considerando o bocal com superfícies irregulares, então a velocidade do jato corrigida será $V_{j,c} =  C_v \: V_{j}$, onde o coeficiente de velocidade ($C_v$) é usado e varia entre $0,92 \leq C_v \leq 0,98$. Considerando uma condição típica de trabalho, que é de um ângulo de saída ($\beta_5$) de $15^{\circ}$, e $C_v$ igual à 0,94, ou seja, uma perda de 6\% segundo Frank White \cite{white}. Portanto a velocidade do jato d'água corrigida ($V_{j,c}$) é de  $73,61\: m/s$.
-
-    Segundo a \autoref{fig-pelton_white},
-
+    Para um bocal perfeito, a velocidade do jato sem a perda de atrito seria a velocidade $V_j = 78,31 \: m/s$, no entanto considerando o bocal com superfícies irregulares, então a velocidade do jato corrigida será $V_{j,c} =  C_v \: V_{j}$, onde o coeficiente de velocidade ($C_v$) é usado e varia entre $0,92 \leq C_v \leq 0,98$. Considerando uma condição típica de trabalho, que é de um ângulo ($\beta$) de $160^{\circ}$, e $C_v$ igual à 0,94, ou seja, uma perda de 6\% segundo Frank White \cite{white}. Portanto a velocidade do jato d'água corrigida ($V_{j,c}$) é de  $73,61\: m/s$.
 
 \section{Diâmetro do rotor da turbina modelo}
 
+    \begin{figure}[htb]
+        \centering
+        \caption{\label{fig-rendimento} Eficiência de uma turbina de ação}
+        \includegraphics[scale=0.5]{images/eficiencia_pelton.png}
+        \legend{Fonte: Fluids Mechanics \cite{white}.}
+    \end{figure}
+
+    A \autoref{fig-rendimento} representa a eficiência ($\eta$) de uma turbina de ação, como é a turbina Pelton para diferentes valores da relação da velocidade absoluta do rotor ($u$), com a velocidade absoluta do jato d'água sem a correção $V_j$, para essas condições de trabalho o máximo rendimento é ($\eta_{max}$) = 85\%, e $\phi$ é igual à 0,47 \cite{white}.
+
+    Sendo assim, a velocidade absoluta do rotor será:
+    \begin{equation*}
+        u = 0,47 \; . \; V_{j,c} = 0,47 \; . \; 73,61 = 34,60 \: m/s
+    \end{equation*}
+
+    O diâmetro do rotor do protótipo pode então ser calculado através da equação básica da velocidade angular $u = 2 \pi r n = \pi D n$ e rearranjando para o diâmetro, tem-se:
+
+    \begin{equation*}
+        D_p = \frac{u}{\pi \; . \; 5} = 2,20\: m
+    \end{equation*}
+
+    Como o fator de escala é $k_G = \frac{D_p}{D_m} = 10$, o diâmetro do rotor no modelo é, utilizando a equação \eqref{eq-geometrica}:
+
+    \begin{equation*}
+        D_m = \frac{D_p}{k_G} = \frac{2,20}{10} = 0,220\:m \mbox{ ou } 220\: mm
+    \end{equation*}
+
 \section{A velocidade de rotação da turbina modelo}
+
+    A altura de queda também será de 10 (dez) vezes menor, desse modo:
+    \begin{equation*}
+        H_m = \frac{H_p}{10} = \frac{342}{10} = 34,2\:m \implies Y_m = g \: . \: H_m = 9,81 \: . \: 34,2 = 335,5\: J/kg
+    \end{equation*}
+
+    Como as grandezas biunitárias são iguais para máquinas de fluxo semelhantes, com base na equação pode-se escrever:
+
+    \begin{equation}
+        n_{11} = \frac{n_m \: D_m}{Y_m^{\rfrac{1}{2}}}
+    \end{equation}
 
 \section{A potência no eixo da turbina modelo}

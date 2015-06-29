@@ -108,3 +108,37 @@
     \end{equation}
 
     Que é facilmente resolvida dando-lhe um valor inicial arbitrário  e fazendo a iteração dos novos valores, pois converge rapidamente.
+
+\section{Máquinas de fluxo semelhantes}
+
+    Há diversas vantagens em se construir máquinas de fluxo semelhantes, enquanto para modelos reduzidos permite diminuir a execução errônea de máquinas de grande porte, a construção de modelos aumentados muitas vezes se faz necessária para facilitar as medições durante os ensaios \cite{maq_fluidos_henn}.
+
+    Para que duas máquinas sejam consideradas semelhantes, é necessário satisfazer algumas condições, como semelhanças geométricas, cinemáticas e dinâmicas.
+
+    A \textbf{semelhança geométrica} significa que as duas máquinas devem ter as mesmas dimensões lineares, igualdade de ângulos e nenhuma omissão ou adição de partes. Para uma máquina de fluxo modelo (índice ``m'') e máquina protótipo (índice ``p'') sejam semelhantes geometricamente, é necessário que:
+
+    \begin{equation} \label{eq-geometrica}
+        \frac{D_{5p}}{D_{5m}} = \frac{b_{5p}}{b_{5m}} = \frac{D_{4p}}{D_{4m}} = k_G = \mbox{constante}
+    \end{equation}
+
+    Onde $k_G$ é denominado escala geométrica ou \textbf{fator de escala} e os ângulos de entrada e saída do protótipo e modelo também necessitam ser iguais, logo:
+
+    \begin{equation}
+        \beta_{4p} = \beta_{4m} \; \; \; \mbox{e} \; \; \; \beta_{5p} = \beta_{5m}
+    \end{equation}
+
+    Já a \textbf{semelhança cinemática} significa que as velocidades e acelerações, para pontos correspondentes, sejam vetores paralelos e possuam relação constante entre seus módulos, ou seja:
+
+    \begin{equation}
+    \frac{c_{m4p}}{c_{m4m}} = \frac{c_{u5p}}{c_{u5m}} = \frac{u_{5p}}{u_{5m}} = k_c = \mbox{constante}     \end{equation}
+
+    Onde $k_c$ é denominado \textbf{escala de velocidades}. E a \textbf{semelhança dinâmica} significa que os tipos idênticos de forças sejam vetores paralelos e que a relação entre seus módulos seja constante para pontos correspondentes, ou seja:
+
+    \begin{equation}
+        \frac{F_{inércia,p}}{F_{inércia,m}} = \frac{F_{atrito,p}}{F_{atrito,m}} = \mbox{constante}
+    \end{equation}
+
+    Onde $k_D$ é denominada de \textbf{escala dinâmica}.
+
+    É possível testar se duas máquinas realmente são semelhantes se cumprirem-se, simultaneamente, a igualdade do número de reynolds, do número de Mach, do número de Froude, do número Weber e do número de Euler. Contudo, o mais importante é o número de Reynolds para a semelhança dinâmica.
+
